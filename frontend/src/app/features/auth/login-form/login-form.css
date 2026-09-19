@@ -1,0 +1,17 @@
+.invalid-feedback {
+  display: none;
+  color: var(--p-red-500);
+}
+
+.ng-invalid.ng-dirty + .invalid-feedback {
+  display: block;
+}
+
+app-login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

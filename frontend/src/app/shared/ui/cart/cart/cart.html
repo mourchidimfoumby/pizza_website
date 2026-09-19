@@ -1,0 +1,20 @@
+<div class="cart-container flex flex-column justify-content-between p-2">
+  <h2 class="text-center">Votre panier</h2>
+  <div class="cart flex flex-column gap-2 mx-2 justify-content-between pb-3">
+    <div class="flex flex-column overflow-auto">
+      @for (cartItemData of cartService.cartData().items; track cartItemData.id) {
+        @if ($index > 0) {
+          <p-divider />
+        }
+        <app-cart-item
+          [cartItemData]="cartItemData"
+          (removed)="onRemoveCartItem(cartItemData)"
+        />
+      }
+    </div>
+    <button class="flex justify-content-between" pButton size="large" severity="success">
+      <span class="text-center">Commander</span>
+      <span class="text-end">{{ cartService.cartData().totalPrice}} €</span>
+    </button>
+  </div>
+</div>

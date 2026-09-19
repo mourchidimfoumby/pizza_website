@@ -1,0 +1,30 @@
+@import 'primeflex/primeflex.css';
+@import 'primeicons/primeicons.css';
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+:root {
+  --app-nav-background-color: #e6e6e6;
+  --app-nav-link-hover: #646464;
+  --app-background-color: #FFFFFF;
+  --app-border-color: #c8c8c8;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+.app-dark {
+  --app-nav-background-color: #1e1e1e;
+  --app-nav-link-hover: #c8c8c8;
+  --app-background-color: #121212;
+  --app-border-color: #282828;
+}

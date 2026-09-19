@@ -1,0 +1,45 @@
+<div class="product-container flex flex-wrap gap-3 p-4">
+  @let state = productState();
+  @switch (state.status) {
+    @case (RequestStatus.ERROR) {
+      <p>{{ state.message }}</p>
+    }
+    @case (RequestStatus.SUCCESS) {
+      @for (product of state.data; track product.id) {
+        <app-product-card
+          [id]="product.id"
+          [imageUrl]="product.imageUrl"
+          [title]="product.name"
+          [content]="product.description"
+          [price]="product.price"
+          (added)="addToCart(product)"
+        />
+      }
+    }
+  }
+</div>
+<div class="cart-container">
+  @if (cartService.cartData().items.length > 0) {
+    <app-cart class="cart"/>
+
+    <button
+      pButton
+      class="cart-button"
+      size="large"
+      [routerLink]="AppPaths.cart"
+    >
+      <p-badge
+        [value]="cartService.cartData().items.length"
+        class="badge"
+        badgeSize="xlarge"
+      />
+
+      <span class="flex align-items-center gap-2">
+        <i class="pi pi-shopping-cart"></i>
+        <p>Voir le panier</p>
+      </span>
+
+      <p>{{ cartService.cartData().totalPrice }} €</p>
+    </button>
+  }
+</div>

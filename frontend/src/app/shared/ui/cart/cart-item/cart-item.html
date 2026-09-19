@@ -1,0 +1,19 @@
+<div class="cart-item flex flex-column px-2 py-1">
+  <div class="flex gap-2 align-items-center justify-content-between">
+    <p class="text-sm">{{ cartItemData().name }}</p>
+    <p class="text-base font-bold">{{ cartItemData().price }} €</p>
+  </div>
+  <div class="flex align-items-center">
+      <p-button
+        icon="pi pi-trash"
+        text
+        severity="danger"
+      />
+    <p>{{ cartItemData().quantity }}</p>
+    <p-button
+      icon="pi pi-plus"
+      text
+      severity="contrast"
+    />
+  </div>
+</div>

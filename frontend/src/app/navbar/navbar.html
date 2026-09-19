@@ -1,0 +1,46 @@
+<header class="px-4 py-3">
+  <nav class="flex justify-content-between align-items-center">
+    <div class="flex align-items-center">
+      <a [routerLink]="AppPaths.root" class="navbar-logo flex gap-2 align-items-center">
+        <img ngSrc="/logo.png" alt="logo" width="36" height="36" />
+        Pizza website
+      </a>
+
+      <p-button [routerLink]="PizzaPaths.root" text severity="contrast" size="large" class="navbar-link">Pizza</p-button>
+      <p-button [routerLink]="DrinkPaths.root" text severity="contrast" size="large" class="navbar-link">Boisson</p-button>
+      <p-button [routerLink]="DessertPaths.root" text severity="contrast" size="large" class="navbar-link">Dessert</p-button>
+    </div>
+
+    <div class="flex gap-2">
+      <p-button
+        [icon]="themeService.isDark() ? 'pi pi-sun' : 'pi pi-moon'"
+        text
+        size="large"
+        severity="contrast"
+        rounded
+        (onClick)="toggleDarkMode()"
+      />
+
+      @if (user) {
+        <p-button
+          icon="pi pi-user"
+          [label]="`${user.firstName} ${user.lastName}`"
+          text
+          size="large"
+          severity="contrast"
+          rounded
+          [routerLink]="AccountPaths.root"
+        />
+      } @else {
+        <p-button
+          icon="pi pi-user"
+          text
+          size="large"
+          severity="contrast"
+          rounded
+          [routerLink]="AuthPaths.login()"
+        />
+      }
+    </div>
+  </nav>
+</header>

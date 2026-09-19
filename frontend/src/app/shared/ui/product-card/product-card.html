@@ -1,0 +1,23 @@
+<p-card class="card-container flex">
+  <img
+    [ngSrc]="imageUrl()"
+    alt="Pizza image"
+    width="200"
+    height="200"
+  >
+  <h3>{{ title() }}</h3>
+  <div class="flex flex-column flex-1 justify-content-between gap-3">
+    @if (content(); as content) {
+      <p class="text-color-secondary text-sm">{{ content }}</p>
+    }
+    <div class="flex align-items-baseline justify-content-between">
+      <h3>{{ price().toFixed(2) }} €</h3>
+      <p-button
+        label="Ajouter"
+        class="font-bold"
+        size="large"
+        (onClick)="onAddClick()"
+      />
+    </div>
+  </div>
+</p-card>

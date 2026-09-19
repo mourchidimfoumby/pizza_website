@@ -1,0 +1,33 @@
+<div class="flex flex-column">
+  <h3>Informations de compte</h3>
+
+  <div class="account-field">
+    <h4>Prénom</h4>
+    <p>{{ account()?.firstName }}</p>
+  </div>
+
+  <div class="account-field">
+    <h4>Nom</h4>
+    <p>{{ account()?.lastName }}</p>
+  </div>
+
+  <div class="account-field">
+    <h4>Adresse e-mail</h4>
+    <p>{{ account()?.email }}</p>
+  </div>
+
+  <div class="account-field">
+    <h4>Mot de passe</h4>
+    <p>{{ '•'.repeat(account()?.password?.length ?? 0) }}</p>
+  </div>
+
+  <div class="account-field">
+    <h4>Adresse</h4>
+    <p>{{ account()?.address }}</p>
+  </div>
+
+  <div class="account-field">
+    <h4>Numéro de téléphone</h4>
+    <p>{{ account()?.phoneNumber }}</p>
+  </div>
+</div>
